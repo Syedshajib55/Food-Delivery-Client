@@ -6,6 +6,9 @@
 
 /* Make it responsive */
 @media only screen and (max-width:688px) {
+    img{
+        width: 100%;
+    }
     .service-container{
         grid-template-columns: repeat(1, 1fr);
     }

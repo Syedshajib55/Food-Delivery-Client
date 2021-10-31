@@ -12,3 +12,15 @@
 .error{
     color: red;
 }
+/* Make it responsive */
+@media only screen and (max-width:688px) {
+    .shipping-form{
+        margin: 0;
+        width: 100%;
+    }
+}
+@media only screen and (min-width:689px) and (max-width: 991px){
+    .shipping-form{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
