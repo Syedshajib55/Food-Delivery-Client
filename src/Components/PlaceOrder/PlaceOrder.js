@@ -11,7 +11,7 @@ const PlaceOrder = () => {
     const {user} = useAuth();
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://creepy-mansion-66832.herokuapp.com/services/${serviceId}`)
         .then( res => res.json())
         .then(data => setService(data));
     }, [serviceId])
