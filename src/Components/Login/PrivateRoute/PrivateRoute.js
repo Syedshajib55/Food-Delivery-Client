@@ -20,7 +20,6 @@ const PrivateRoute = ({ children, ...rest }) => {
 
             }
         >
-
         </Route>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import { useState } from "react";
+import {Link, useLocation, useHistory } from "react-router-dom"
 import useAuth from '../../Hooks/useAuth/useAuth';
 import initializeAuthentication from '../../Firebase/firebase.init';
 initializeAuthentication();
@@ -10,7 +11,6 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
 
   const auth = getAuth();
-
 
   const toggleLogin = e => {
     setIsLogin(e.target.checked)
@@ -48,12 +48,22 @@ const Login = () => {
     updateProfile(auth.currentUser, { displayName: name })
       .then(result => { })
   }
+  const Location = useLocation();
+  const history = useHistory();
+  const redirect_url = Location.state?.from || '/';
+
+  const handleGoogleLogin=()=>{
+    signInUsingGoogle()
+    .then(result =>{
+        history.push(redirect_url)
+    })
+  }
 
     const {signInUsingGoogle} = useAuth();
     return (
         <div className="mx-5">
           <h3 className="m-5">Please Login First</h3>
-        <button onClick={signInUsingGoogle} className="mb-5 btn btn-warning">Sign In With Google</button>
+        <button onClick={handleGoogleLogin} className="mb-5 btn btn-warning">Sign In With Google</button>
     </div>
     );
 };

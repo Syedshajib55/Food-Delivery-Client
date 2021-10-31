@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-const ManageServices = () => {
+const ManageAllOrders = () => {
     const [services, setServices] = useState([]);
     
     useEffect(()=>{
@@ -24,7 +23,7 @@ const ManageServices = () => {
     }
     return (
         <div>
-            <h3 className='text-primary my-5'>Manage My Services</h3>
+            <h3 className='text-primary my-5'>All Users Services</h3>
             {
                 services.map(service => <div key={service._id}>
                     <h3>{service.name}</h3>
@@ -35,4 +34,4 @@ const ManageServices = () => {
     );
 };
 
-export default ManageServices;
+export default ManageAllOrders;

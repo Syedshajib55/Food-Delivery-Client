@@ -12,6 +12,8 @@ import About from './Components/About Us/About';
 import Contact from './Components/Contact Us/Contact';
 import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 import ManageServices from './Components/ManageServices/ManageServices';
+import ManageAllOrders from './Components/ManageAllOrders/ManageAllOrders';
+
 function App() {
   return (
     <div className="App">
@@ -28,21 +30,24 @@ function App() {
           <Route path="/login">
               <Login></Login>
           </Route>
-          <PrivateRoute path="/aboutus">
+          <Route path="/aboutus">
               <About></About>
-          </PrivateRoute>
-          <PrivateRoute path="/contactus">
+          </Route>
+          <Route path="/contactus">
               <Contact></Contact>
-          </PrivateRoute>
+          </Route>
           <PrivateRoute path="/PlaceOrder/:serviceId">
               <PlaceOrder></PlaceOrder>
           </PrivateRoute>
-          <Route path='/AddService'>
+          <PrivateRoute path="/allorders">
+              <ManageAllOrders></ManageAllOrders>
+          </PrivateRoute>
+          <PrivateRoute path='/AddService'>
               <AddService></AddService>
-          </Route>
-          <Route path='/manageServices'>
+          </PrivateRoute>
+          <PrivateRoute path='/manageServices'>
               <ManageServices></ManageServices>
-          </Route>
+          </PrivateRoute>
           <Route path="*">
               <NotFound></NotFound>
           </Route>

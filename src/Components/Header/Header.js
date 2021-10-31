@@ -18,9 +18,14 @@ const Header = () => {
                         <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
                         <Nav.Link as={HashLink} to="/aboutus">About Us</Nav.Link>
                         <Nav.Link as={HashLink} to="/contactus">Contact Us</Nav.Link>
+                        {/* <Nav.Link as={HashLink} to="/PlaceOrder">Place Order</Nav.Link> */}
+                        <Nav.Link as={HashLink} to="/allorders">Manage All Orders</Nav.Link>
+                        <Nav.Link as={HashLink} to="/manageServices">Manage Orders</Nav.Link>
+                        <Nav.Link as={HashLink} to="/addservice">Add A New Service</Nav.Link>
                         {user?.email ?
                             <Button onClick={logOut} variant="light">Logout</Button> :
-                            <Nav.Link as={Link} to="/login">Login</Nav.Link>}
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        }
                         <Navbar.Text>
                             <a className="ms-2" href="#login">{user?.displayName}</a>
                         </Navbar.Text>
